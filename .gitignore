@@ -1,0 +1,8 @@
+Latest.md
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+*.tfstate
+*.tfstate.backup
+crash.log
+.terraform.lock.hcl
