@@ -1,4 +1,4 @@
-const api_url = "https://7dsl39y93b.execute-api.us-east-1.amazonaws.com/prod/visitors";
+const api_url =  "abdc";
 const countEl = document.getElementById("count");
 
 // function to create a random value for the cookie
@@ -72,21 +72,3 @@ async function handleVisitor() {
 }
 
 handleVisitor();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

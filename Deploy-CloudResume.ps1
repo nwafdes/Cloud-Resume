@@ -35,7 +35,7 @@ function Deploy_Cloud {
         try {
             $jsPath = Join-Path -Path $Path -ChildPath "assets\interactive.js"
             $content = Get-Content -Path $jsPath -Raw
-            $currentUrl = ($content | Select-String -Pattern '="(.+?)";').Matches.Groups[1].Value
+            $currentUrl = ($content | Select-String -Pattern '\s*"([^"]+)"').Matches.Groups[1].Value
             $newUrl = terraform output -raw invoke_url
             $content -replace $currentUrl, $newUrl | Set-Content -Path $jsPath
         }
