@@ -23,9 +23,12 @@ jobs:
             - name: "Configure AWS Creds"
               uses: aws-actions/configure-aws-credentials@v4.1.0
               with:
-                aws-region: ${{secrets.AWS_REGION}}
-                role-to-assume: ${{secrets.IAM_ARN}}
+                aws-region: ${{ secrets.AWS_REGION }}
+                role-to-assume: ${{ secrets.IAM_ARN }}
                 role-session-name: samplerolesession
-            - name: "Run Powershell script"
-              run: pwsh ./Deploy-cloudresume.ps1 -action apply
+            - name:
+              run: aws sts get-caller-identity
+
+            # - name: "Run Powershell script"
+            #   run: pwsh ./Deploy-cloudresume.ps1 -action apply
               
