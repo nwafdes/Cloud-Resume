@@ -6,7 +6,7 @@ on:
 jobs:
     deploy-cloud:
         name: "Deploy Cloud Resume Challenge"
-        runs-on: windows:latest
+        runs-on: ubuntu-latest
         environment: testing
         steps:
               
@@ -25,5 +25,5 @@ jobs:
                 role-to-assume: ${{secrets.IAM_ARN}}
                 role-session-name: samplerolesession
             - name: "Run Powershell script"
-              run: .\Deploy-CloudResume.ps1 -action apply
+              run: pwsh ./Deploy-cloudresume.ps1 -action apply
               
