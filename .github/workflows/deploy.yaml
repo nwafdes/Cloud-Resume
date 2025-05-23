@@ -29,5 +29,7 @@ jobs:
                 role-session-name: samplerolesession
             - name: "Run Powershell script"
               shell: pwsh
-              run: .\Deploy-cloudresume.ps1 -action apply
+              run: |
+                . .\Deploy-CloudResume.ps1
+                Deploy_Cloud -action apply -verbose
               
