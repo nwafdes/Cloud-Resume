@@ -6,7 +6,7 @@ function Deploy_Cloud {
         [string]$action,
 
         [ValidateScript({Test-Path $_})]
-        [string]$path="G:\My Drive\Cources and certifications\AWS\The-Cloud-Resume\Resume_Website_Store\CRM"
+        [string]$path=(get-item .).fullname
     )
 
     function Deploy_Terraform {

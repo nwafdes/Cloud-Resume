@@ -1,0 +1,29 @@
+name: deploy-cloud-resume
+
+on:
+    workflow_dispatch:
+
+jobs:
+    deploy-cloud:
+        name: "Deploy Cloud Resume Challenge"
+        runs-on: windows:latest
+        environment: testing
+        steps:
+              
+            - name: "Check repository files"
+              uses: actions/checkout@v4
+
+            - name: Set up Terraform
+              uses: hashicorp/setup-terraform@v3
+              with:
+                terraform_version: '1.6.6'
+
+            - name: "Configure AWS Creds"
+              uses: aws-actions/configure-aws-credentials@v4.1.0
+              with:
+                aws-region: ${{secrets.AWS_REGION}}
+                role-to-assume: ${{secrets.IAM_ARN}}
+                role-session-name: samplerolesession
+            - name: "Run Powershell script"
+              run: .\Deploy-CloudResume.ps1 -action apply
+              
