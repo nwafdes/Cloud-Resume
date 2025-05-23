@@ -6,6 +6,8 @@ on:
 jobs:
     deploy-cloud:
         name: "Deploy Cloud Resume Challenge"
+        permissions:
+          id-token: write
         runs-on: ubuntu-latest
         environment: testing
         steps:
