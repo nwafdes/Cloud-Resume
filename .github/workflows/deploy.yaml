@@ -28,5 +28,7 @@ jobs:
                 role-to-assume: ${{ secrets.IAM_ARN }}
                 role-session-name: samplerolesession
             - name: "Run Powershell script"
-              run: pwsh ./Deploy-cloudresume.ps1 -action apply
+              run: |
+                pwd
+                ls
               
