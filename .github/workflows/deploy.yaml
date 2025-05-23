@@ -27,9 +27,6 @@ jobs:
                 aws-region: ${{ secrets.AWS_REGION }}
                 role-to-assume: ${{ secrets.IAM_ARN }}
                 role-session-name: samplerolesession
-            - name:
-              run: aws sts get-caller-identity
-
-            # - name: "Run Powershell script"
-            #   run: pwsh ./Deploy-cloudresume.ps1 -action apply
+            - name: "Run Powershell script"
+              run: pwsh ./Deploy-cloudresume.ps1 -action apply
               
