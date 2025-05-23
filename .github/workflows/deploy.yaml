@@ -3,11 +3,12 @@ name: deploy-cloud-resume
 on:
     workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
 jobs:
     deploy-cloud:
         name: "Deploy Cloud Resume Challenge"
-        permissions:
-          id-token: write
         runs-on: ubuntu-latest
         environment: testing
         steps:
