@@ -5,10 +5,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "sahaba-cloudresume-challenge-tfstate"
-    key            = "cloud-resume/frontend/terraform.tfstate"
+    bucket         = "sahaba-cloudresume-challenge-tfstate" # REPLACE WITH YOUR BUCKET NAME
+    key            = "03-basics/frontend-bootstrap/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-state-locking"
+    dynamodb_table = "sahaba-terraform-state-locking"
     encrypt        = true
   }
 

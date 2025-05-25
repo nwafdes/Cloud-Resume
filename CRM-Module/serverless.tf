@@ -159,7 +159,7 @@ resource "aws_lambda_function" "test_lambda" {
 
   source_code_hash = filebase64sha256("C:/Temp/lambda_function_payload.zip")
 
-  runtime = "python3.13"
+  runtime = "python3.9"
 
   environment {
     variables = {

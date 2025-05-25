@@ -29,8 +29,14 @@ jobs:
                 role-session-name: samplerolesession
 
             - name: "Terraform init"
-              run: terraform init
               working-directory: ./Env/Prod/Backend
+              run: |
+                pwd
+                ls
+            - name: "Second pwd"
+              run: |
+                ls
+                pwd
 
             # - name: "Run Powershell script"
             #   shell: pwsh
