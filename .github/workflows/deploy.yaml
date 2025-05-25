@@ -27,9 +27,15 @@ jobs:
                 aws-region: ${{ secrets.AWS_REGION }}
                 role-to-assume: ${{ secrets.IAM_ARN }}
                 role-session-name: samplerolesession
-            - name: "Run Powershell script"
-              shell: pwsh
+            - name: "Run Terraform"
               run: |
-                . .\Deploy-CloudResume.ps1
-                Deploy_Cloud -action apply -verbose
+                set-location .\Env\Prod\Backend
+                ls
+                terraform init
+                terraform plan
+            # - name: "Run Powershell script"
+            #   shell: pwsh
+            #   run: |
+            #     . .\Deploy-CloudResume.ps1
+            #     Deploy_Cloud -action apply -verbose
               
