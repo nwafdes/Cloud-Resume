@@ -27,16 +27,16 @@ jobs:
                 aws-region: ${{ secrets.AWS_REGION }}
                 role-to-assume: ${{ secrets.IAM_ARN }}
                 role-session-name: samplerolesession
+
             - name: "set-location"
               run: |
                 set-location .\Env\Prod\Backend
+                ls
 
-            - name: "Terraform init"
-              run: terraform init
-            
-            - name: "Terraform Plan"
-              run: terraform plan
-            
+            - name: "Terraform Verison"
+              run: terraform -v
+              
+              
             # - name: "Run Powershell script"
             #   shell: pwsh
             #   run: |
