@@ -30,13 +30,10 @@ jobs:
 
             - name: "Terraform init"
               working-directory: ./Env/Prod/Backend
-              run: |
-                pwd
-                ls
-            - name: "Second pwd"
-              run: |
-                ls
-                pwd
+              run: terraform init
+
+            - name: "Terraform plan"
+              run: terraform plan
 
             # - name: "Run Powershell script"
             #   shell: pwsh
