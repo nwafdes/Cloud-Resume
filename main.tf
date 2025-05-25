@@ -10,7 +10,7 @@ terraform {
     aws = {
         source = "hashicorp/aws"
         # the version of aws provider plugin to choose in this module
-        version = ">= 1.0"
+        version = "~> 3.0"
     }
   }
 }

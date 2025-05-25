@@ -4,13 +4,18 @@ provider "aws" {
 }
 
 terraform {
+  backend "s3" {
+    bucket         = "sahaba-cloudresume-challenge-tfstate"
+    key            = "cloud-resume/frontend/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-state-locking"
+    encrypt        = true
+  }
+
   required_providers {
-    # aws is a local name that should be unique and will be used across the module.
-    #best practice = use localname same as the type hashicorp/aws aws here is the type
     aws = {
-        source = "hashicorp/aws"
-        # the version of aws provider plugin to choose in this module
-        version = ">= 1.0"
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
     }
   }
 }
