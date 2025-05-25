@@ -33,7 +33,12 @@ jobs:
               run: terraform init
 
             - name: "Terraform plan"
+              working-directory: ./Env/Prod/Backend
               run: terraform plan
+            
+            - name: "Terraform run"
+              working-directory: ./Env/Prod/Backend
+              run: terraform apply --auto-approve
 
             # - name: "Run Powershell script"
             #   shell: pwsh
