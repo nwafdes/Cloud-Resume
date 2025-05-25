@@ -9,7 +9,7 @@ permissions:
 jobs:
     deploy-cloud:
         name: "Deploy Cloud Resume Challenge"
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         environment: testing
         steps:
               
@@ -30,7 +30,7 @@ jobs:
 
             - name: "set-location"
               run: |
-                set-location .\Env\Prod\Backend
+                cd ./Env/Prod/Backend
                 ls
 
             - name: "Terraform Verison"
